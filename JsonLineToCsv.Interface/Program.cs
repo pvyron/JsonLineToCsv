@@ -11,17 +11,8 @@ namespace JsonLineToCsv.Interface
         [STAThread]
         static void Main()
         {
-            string path = @"E:\pvyro\Downloads\Test\NG.txt";
-
-            List<SourceObject> sourceObjects = new InputFileConverter(path).GetSourceObjects();
-            List<OutputObject> outputObjects = sourceObjects.Select(o => o.ToOutputObject()).ToList();
-            List<CsvLine> csvLines = outputObjects.SelectMany(o => o.GetCsvLines()).ToList();
-            csvLines.SaveAs(@"E:\pvyro\Downloads\Test\output.csv");
-
-            Console.WriteLine("Done");
-            Console.ReadLine();
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Form1());
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainForm());
         }
     }
 }
