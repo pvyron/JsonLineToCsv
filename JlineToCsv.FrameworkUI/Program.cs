@@ -1,19 +1,20 @@
-using JsonLineToCsv.Interface.Models;
-using JsonLineToCsv.Interface.Workers;
+﻿using System;
+using System.Windows.Forms;
 
-namespace JsonLineToCsv.Interface
+namespace JlineToCsv.FrameworkUI
 {
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
             try
             {
-                ApplicationConfiguration.Initialize();
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
             }
             catch (Exception ex)
