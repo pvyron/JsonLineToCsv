@@ -63,7 +63,7 @@ namespace JlineToCsv.FrameworkUI
 
                         foreach (var token in JLine["data"])
                         {
-                            writer.WriteLine($"{JLine["series_id"]},{JLine["name"]},{JLine["units"]},{JLine["last_updated"]},{token[0]},{token[1]}");
+                            writer.WriteLine($"{JLine["series_id"]},{JLine["name"].ToString().Replace(",", string.Empty)},{JLine["units"]},{JLine["last_updated"]},{token[0]},{token[1]}");
                         }
                     }
                 }
